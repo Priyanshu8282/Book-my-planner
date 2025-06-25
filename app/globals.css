@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #1A237E;
+  --secondary-gold: #FFD700;
+  --primary-emerald: #2ecc71;
+  --secondary-peach: #ffb07c;
+  --primary-purple: #6a1b9a;
+  --secondary-silver: #bdbdbd;
+  --white: #fff;
+}
+
+.home-theme {
+  --primary: var(--primary-blue);
+  --secondary: var(--secondary-gold);
+  --background: var(--white);
+  --foreground: var(--primary-blue);
+}
+
+.about-theme {
+  --primary: var(--primary-emerald);
+  --secondary: var(--secondary-peach);
+  --background: var(--white);
+  --foreground: var(--primary-emerald);
+}
+
+.services-theme {
+  --primary: var(--primary-purple);
+  --secondary: var(--secondary-silver);
+  --background: var(--white);
+  --foreground: var(--primary-purple);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-maroon), var(--secondary-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-pattern {
+  background-image: radial-gradient(circle at 25% 25%, rgba(139, 21, 56, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+}
