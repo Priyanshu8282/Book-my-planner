@@ -69,8 +69,8 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
+        <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <Badge className="bg-white/20 text-white">Contact Us</Badge>
             <h1 className="font-playfair text-4xl md:text-5xl font-bold">Let's Create Something Magical</h1>
@@ -83,13 +83,13 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-16">
+        <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
               <Card className="border-0 shadow-xl">
-                <CardContent className="p-8">
+                <CardContent className="p-6">
                   <div className="mb-8">
                     <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-2">Get in Touch</h2>
                     <p className="text-gray-600">
@@ -213,7 +213,7 @@ export default function ContactPage() {
             <div className="space-y-8">
               {/* Contact Info */}
               <Card className="border-0 shadow-xl">
-                <CardContent className="p-8">
+                <CardContent className="p-6">
                   <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-6">Contact Information</h2>
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">

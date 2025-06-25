@@ -139,8 +139,7 @@ export default function HomePage() {
                   ✨ 10+ Years of Excellence
                 </Badge>
                 <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  Design your
-                  <span className="gradient-text"> desire </span>
+                  Design you  desire
                   into reality
                 </h1>
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
@@ -389,32 +388,6 @@ export default function HomePage() {
                   }`}
                 />
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold">Ready to Create Your Perfect Event?</h2>
-            <p className="text-xl text-white/90">
-              Let's turn your vision into reality. Contact us today for a free consultation and let's start planning
-              your unforgettable celebration.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#8B1538] hover:bg-gray-100">
-                Get Free Quote
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#8B1538]"
-              >
-                Call Now: +91 9876543210
-              </Button>
             </div>
           </div>
         </div>
