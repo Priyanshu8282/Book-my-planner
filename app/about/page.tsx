@@ -66,11 +66,11 @@ export default function AboutPage() {
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge className="bg-white/20 text-white">About Us</Badge>
-            <h1 className="font-playfair text-4xl md:text-5xl font-bold">Crafting Memories Since 2014</h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <Badge className="bg-white/20 text-white mb-8">About Us</Badge>
+            <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-8">Crafting Memories Since 2014</h1>
+            <p className="text-xl text-white/90 leading-relaxed mb-6">
               Based in the royal city of Udaipur, Book My Planner has been creating magical moments and unforgettable
               experiences for over a decade. Our journey began with a simple vision: to make every celebration
               extraordinary.
@@ -81,23 +81,23 @@ export default function AboutPage() {
 
       {/* Our Story Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center bg-white rounded-2xl p-6 md:p-10">
             <div className="space-y-6">
               <Badge className="bg-[#8B1538]/10 text-[#8B1538]">Our Story</Badge>
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold">From Dreams to Reality</h2>
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">From Dreams to Reality</h2>
               <div className="space-y-4 text-gray-600">
-                <p>
+                <p className="mb-4">
                   Founded in 2014 in the beautiful city of Udaipur, Book My Planner began as a small team with big
                   dreams. Our founder, Rajesh Sharma, recognized the need for professional, personalized event planning
                   services in Rajasthan.
                 </p>
-                <p>
+                <p className="mb-4">
                   What started as a passion project has grown into one of Udaipur's most trusted event planning
                   companies. We've had the privilege of planning over 1000 events, from intimate family gatherings to
                   grand destination weddings and high-profile corporate events.
                 </p>
-                <p>
+                <p className="mb-4">
                   Our success lies in our commitment to understanding each client's unique vision and bringing it to
                   life with creativity, precision, and attention to detail. Every event we plan is a testament to our
                   dedication to excellence.
@@ -110,7 +110,7 @@ export default function AboutPage() {
                 alt="Our Story"
                 width={600}
                 height={500}
-                className="rounded-2xl shadow-xl"
+                className="rounded-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-[#8B1538] text-white p-6 rounded-xl">
                 <div className="text-2xl font-bold">10+</div>
@@ -123,17 +123,17 @@ export default function AboutPage() {
 
       {/* Mission & Vision */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-12">
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 bg-white rounded-2xl">
               <CardContent className="p-8 text-center">
                 <div className="flex justify-center mb-6">
                   <div className="p-4 bg-[#8B1538]/10 rounded-full">
                     <Target className="h-8 w-8 text-[#8B1538]" />
                   </div>
                 </div>
-                <h3 className="font-playfair text-2xl font-bold mb-4">Our Mission</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="font-playfair text-2xl font-bold mb-8">Our Mission</h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
                   To create extraordinary experiences that exceed expectations, bringing dreams to life through
                   meticulous planning, creative design, and flawless execution. We are committed to making every
                   celebration a cherished memory.
@@ -141,15 +141,15 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg">
+            <Card className="border-0 bg-white rounded-2xl">
               <CardContent className="p-8 text-center">
                 <div className="flex justify-center mb-6">
                   <div className="p-4 bg-[#8B1538]/10 rounded-full">
                     <Eye className="h-8 w-8 text-[#8B1538]" />
                   </div>
                 </div>
-                <h3 className="font-playfair text-2xl font-bold mb-4">Our Vision</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="font-playfair text-2xl font-bold mb-8">Our Vision</h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
                   To be the leading event planning company in Rajasthan, known for innovation, excellence, and
                   personalized service. We envision a future where every celebration we touch becomes a masterpiece of
                   joy and elegance.
@@ -162,18 +162,18 @@ export default function AboutPage() {
 
       {/* Our Values */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-4">Our Values</Badge>
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">What Drives Us</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-8">Our Values</Badge>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">What Drives Us</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-6">
               Our core values guide everything we do, from the first consultation to the final celebration.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow text-center">
+              <Card key={index} className="border-0 bg-white rounded-2xl text-center">
                 <CardContent className="p-6">
                   <div className="flex justify-center mb-4">
                     <div className="p-3 bg-[#8B1538]/10 rounded-full">
@@ -191,11 +191,11 @@ export default function AboutPage() {
 
       {/* Team Section */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-4">Our Team</Badge>
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Meet the Experts</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-8">Our Team</Badge>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">Meet the Experts</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-6">
               Our passionate team of professionals brings together years of experience, creativity, and dedication to
               make your events extraordinary.
             </p>

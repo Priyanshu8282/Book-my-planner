@@ -132,11 +132,11 @@ export default function ServicesPage() {
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge className="bg-white/20 text-white">Our Services</Badge>
-            <h1 className="font-playfair text-4xl md:text-5xl font-bold">Comprehensive Event Solutions</h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <Badge className="bg-white/20 text-white mb-8">Our Services</Badge>
+            <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-8">Comprehensive Event Solutions</h1>
+            <p className="text-xl text-white/90 leading-relaxed mb-6">
               From intimate gatherings to grand celebrations, we offer complete event planning services tailored to your
               needs and budget. Let us bring your vision to life with our expertise and creativity.
             </p>
@@ -146,9 +146,9 @@ export default function ServicesPage() {
 
       {/* Main Services */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-8">
           {services.map((service, index) => (
-            <div key={index} className={`mb-20 ${index !== services.length - 1 ? "border-b pb-20" : ""}`}>
+            <div key={index} className={`mb-20 p-6 md:p-10 bg-white rounded-2xl`}>
               <div
                 className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
               >
@@ -160,9 +160,8 @@ export default function ServicesPage() {
                     <Badge className="bg-[#8B1538]/10 text-[#8B1538]">{service.title}</Badge>
                   </div>
 
-                  <h2 className="font-playfair text-3xl md:text-4xl font-bold">{service.title}</h2>
-
-                  <p className="text-gray-600 text-lg leading-relaxed">{service.description}</p>
+                  <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">{service.title}</h2>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-6">{service.description}</p>
 
                   <div className="grid md:grid-cols-2 gap-4">
                     {service.features.map((feature, idx) => (
@@ -190,12 +189,12 @@ export default function ServicesPage() {
       </section>
 
       {/* Additional Services */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gray-50 mt-12">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-4">Additional Services</Badge>
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">Complete Event Solutions</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-8">Additional Services</Badge>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">Complete Event Solutions</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-6">
               We offer a comprehensive range of additional services to make your event truly exceptional and memorable.
             </p>
           </div>

@@ -128,21 +128,22 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden hero-pattern">
+      <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden hero-pattern animate-fade-in">
         <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/70"></div>
 
-        <div className="container mx-auto px-4 relative z-10 py-12 md:py-0">
+        <div className="container mx-auto px-4 md:px-8 relative z-10 py-12 md:py-0">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-6 md:space-y-8 animate-slide-up text-center lg:text-left">
               <div className="space-y-4">
-                <Badge className="bg-[#8B1538]/10 text-[#8B1538] hover:bg-[#8B1538]/20">
+                <Badge className="bg-[#8B1538]/10 text-[#8B1538] hover:bg-[#8B1538]/20 mb-8">
                   ✨ 10+ Years of Excellence
                 </Badge>
-                <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  Design you  desire
+                <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+                  Design your
+                  <span> desire </span>
                   into reality
                 </h1>
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-6">
                   With over 10 years of expertise in the events industry, we specialize in delivering exceptional
                   Wedding Events, Corporate Events, and MICE solutions in the beautiful city of Udaipur.
                 </p>
@@ -234,14 +235,13 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 md:mb-16 animate-slide-up">
-            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-4">Our Services</Badge>
-            <h2 className="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Comprehensive Event Solutions</h2>
-            <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">
-              From intimate gatherings to grand celebrations, we bring your vision to life with creativity, precision,
-              and passion.
+      <section className="py-20 animate-fade-in">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center mb-16 animate-slide-up">
+            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-8">Our Services</Badge>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">What We Offer</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-6">
+              Explore our range of event planning services tailored to your needs.
             </p>
           </div>
 
@@ -249,7 +249,7 @@ export default function HomePage() {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg"
+                className="group transition-all duration-300 border-0 rounded-2xl animate-slide-up"
               >
                 <CardContent className="p-6 md:p-8">
                   <div className="flex justify-center mb-6">
@@ -276,10 +276,10 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 animate-fade-in">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            <div className="space-y-8 animate-slide-up">
               <div>
                 <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-4">Why Choose Us</Badge>
                 <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">Your Dreams, Our Expertise</h2>
@@ -343,18 +343,18 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-[#8B1538] text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <Badge className="bg-white/20 text-white mb-4">Testimonials</Badge>
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our happy clients have to say about their experience with us.
+      <section className="py-20 bg-[#8B1538] text-white animate-fade-in">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center mb-16 animate-slide-up">
+            <Badge className="bg-white/20 text-white mb-8">Testimonials</Badge>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">What Our Clients Say</h2>
+            <p className="text-white/80 max-w-2xl mx-auto mb-6">
+              Hear from those who have celebrated with us.
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 animate-slide-up">
               <CardContent className="p-8 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
