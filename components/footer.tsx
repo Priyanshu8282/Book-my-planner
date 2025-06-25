@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Heart, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube } from "lucide-react"
+import Image from "next/image"
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -9,7 +10,9 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Heart className="h-6 w-6 text-[#8B1538]" />
+              <div className="bg-white p-1 rounded-full flex items-center justify-center">
+                <Image src="/images/logo.png" alt="Book My Planner Logo" width={36} height={36} className="w-9 h-9 object-contain" />
+              </div>
               <h3 className="font-playfair text-xl font-bold">Book My Planner</h3>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">

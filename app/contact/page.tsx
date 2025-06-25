@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import { useRef } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -23,6 +24,8 @@ export default function ContactPage() {
     message: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [mapLoading, setMapLoading] = useState(true)
+  const mapRef = useRef<HTMLIFrameElement>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -83,9 +86,9 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12">
+      <section className="py-12">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Contact Form */}
             <div>
               <Card className="border-0 shadow-xl">
@@ -210,10 +213,10 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Info & Map */}
-            <div className="space-y-8">
+            <div className="flex flex-col gap-6">
               {/* Contact Info */}
-              <Card className="border-0 shadow-xl">
-                <CardContent className="p-6">
+              <Card className="border-0 rounded-2xl">
+                <CardContent className="p-6 md:p-8">
                   <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-6">Contact Information</h2>
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
@@ -258,9 +261,18 @@ export default function ContactPage() {
               </Card>
 
               {/* Map */}
-              <Card className="border-0 shadow-xl overflow-hidden">
-                <CardContent className="p-0">
+              <Card className="border-0 rounded-2xl overflow-hidden">
+                <CardContent className="p-0 relative min-h-[400px] flex items-center justify-center">
+                  {mapLoading && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+                      <svg className="animate-spin h-8 w-8 text-[#8B1538]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                    </div>
+                  )}
                   <iframe
+                    ref={mapRef}
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.1234567890123!2d73.71234567890123!3d24.56789012345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3947e9c0c0c0c0c0%3A0x0!2s491%20Ambamata%20Scheme%2C%20Udaipur%2C%20Rajasthan%20313001!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
                     width="100%"
                     height="400"
@@ -269,6 +281,7 @@ export default function ContactPage() {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                     className="w-full h-[400px]"
+                    onLoad={() => setMapLoading(false)}
                   ></iframe>
                 </CardContent>
               </Card>

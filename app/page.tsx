@@ -23,6 +23,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 const stats = [
   { number: "500+", label: "Happy Couples", icon: Heart },
@@ -100,6 +101,7 @@ const heroImages = [
 export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
+  const router = useRouter()
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -150,7 +152,11 @@ export default function HomePage() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="bg-[#8B1538] hover:bg-[#6B1028] text-white group">
+                <Button
+                  size="lg"
+                  className="bg-[#8B1538] hover:bg-[#6B1028] text-white group"
+                  onClick={() => router.push('/contact')}
+                >
                   Plan Your Event
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -158,6 +164,7 @@ export default function HomePage() {
                   size="lg"
                   variant="outline"
                   className="border-[#8B1538] text-[#8B1538] hover:bg-[#8B1538] hover:text-white group"
+                  onClick={() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')}
                 >
                   <Play className="mr-2 h-4 w-4" />
                   Watch Our Story
@@ -267,7 +274,7 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-6 bg-[#8B1538] hover:bg-[#6B1028]">Learn More</Button>
+                  <Button className="w-full mt-6 bg-[#8B1538] hover:bg-[#6B1028]" onClick={() => router.push('/services')}>Learn More</Button>
                 </CardContent>
               </Card>
             ))}
