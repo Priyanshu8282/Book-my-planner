@@ -221,12 +221,12 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
-            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-4">Our Process</Badge>
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">How We Work</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-6">Our Process</Badge>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">How We Work</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-4">
               Our systematic approach ensures every detail is perfect and your event exceeds expectations.
             </p>
           </div>
@@ -238,14 +238,14 @@ export default function ServicesPage() {
               { step: "03", title: "Execution", desc: "Flawless execution of your event" },
               { step: "04", title: "Follow-up", desc: "Post-event support and feedback" },
             ].map((process, index) => (
-              <div key={index} className="text-center relative">
-                <div className="w-16 h-16 bg-[#8B1538] text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+              <div key={index} className="text-center relative animate-slide-up">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#8B1538] to-[#6B1028] text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4 shadow-lg border-4 border-white">
                   {process.step}
                 </div>
                 <h4 className="font-semibold text-lg mb-2">{process.title}</h4>
-                <p className="text-gray-600 text-sm">{process.desc}</p>
+                <p className="text-gray-600 text-sm mb-2">{process.desc}</p>
                 {index < 3 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-300 -translate-x-1/2"></div>
+                  <div className="hidden md:block absolute top-8 left-full w-full h-1 bg-gradient-to-r from-[#8B1538]/30 to-[#6B1028]/30 -translate-x-1/2"></div>
                 )}
               </div>
             ))}
