@@ -106,8 +106,8 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image
-                src="/placeholder.svg?height=500&width=600"
-                alt="Our Story"
+                src="/images/dreams.jpg"
+                alt="From Dreams to Reality"
                 width={600}
                 height={500}
                 className="rounded-2xl"

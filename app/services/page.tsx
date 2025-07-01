@@ -25,7 +25,7 @@ const services = [
     title: "Wedding Planning",
     description: "Complete wedding planning services from engagement to reception",
     icon: Heart,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/groom-putting-ring-bride-s-finger.jpg",
     features: [
       "Pre-wedding ceremonies",
       "Venue selection & booking",
@@ -54,7 +54,7 @@ const services = [
     title: "Corporate Events",
     description: "Professional corporate event management solutions",
     icon: Users,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/Corporate.jpg",
     features: [
       "Conference planning",
       "Product launches",
@@ -83,7 +83,7 @@ const services = [
     title: "MICE Solutions",
     description: "Meetings, Incentives, Conferences, and Exhibitions",
     icon: Calendar,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/images/global_meetings_and_conferences.jpg",
     features: [
       "Meeting planning",
       "Incentive tours",

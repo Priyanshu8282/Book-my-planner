@@ -31,7 +31,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Quick Links</h4>
             <div className="space-y-2">
-              {["Home", "About Us", "Services", "Gallery", "Contact"].map((link) => (
+              {["Home", "About", "Services", "Gallery", "Contact"].map((link) => (
                 <Link
                   key={link}
                   href={`/${link.toLowerCase().replace(" ", "-")}`}
@@ -83,7 +83,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Book My Planner. All rights reserved. | Crafted with ❤️ in Udaipur
+            © {new Date().getFullYear()} Book My Planner. All rights reserved. | Crafted with in Udaipur
           </p>
         </div>
       </div>

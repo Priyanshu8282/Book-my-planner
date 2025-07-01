@@ -21,7 +21,7 @@ const galleryItems = [
     category: "weddings",
     title: "Royal Palace Wedding",
     description: "A magnificent wedding celebration at City Palace, Udaipur",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/image_1.jpg",
     client: "Priya & Rahul",
   },
   {
@@ -29,7 +29,7 @@ const galleryItems = [
     category: "corporate",
     title: "Tech Conference 2023",
     description: "Annual technology conference with 500+ attendees",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/image_2.jpg",
     client: "TechCorp India",
   },
   {
@@ -37,7 +37,7 @@ const galleryItems = [
     category: "weddings",
     title: "Destination Beach Wedding",
     description: "Romantic beachside wedding ceremony in Goa",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/image_3.jpg",
     client: "Anjali & Vikram",
   },
   {
@@ -45,7 +45,7 @@ const galleryItems = [
     category: "mice",
     title: "International Summit",
     description: "Multi-day international business summit",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/image_4.jpg",
     client: "Global Business Forum",
   },
   {
@@ -53,7 +53,7 @@ const galleryItems = [
     category: "weddings",
     title: "Traditional Rajasthani Wedding",
     description: "Authentic Rajasthani wedding with cultural performances",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/image_5.jpg",
     client: "Meera & Arjun",
   },
   {
@@ -61,7 +61,7 @@ const galleryItems = [
     category: "corporate",
     title: "Product Launch Event",
     description: "Grand product launch with celebrity appearances",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/image_1.jpg",
     client: "Innovation Labs",
   },
   {
@@ -69,7 +69,7 @@ const galleryItems = [
     category: "weddings",
     title: "Garden Wedding Ceremony",
     description: "Elegant garden wedding with floral decorations",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/image_2.jpg",
     client: "Kavya & Rohit",
   },
   {
@@ -77,7 +77,7 @@ const galleryItems = [
     category: "mice",
     title: "Medical Conference",
     description: "International medical conference and exhibition",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/image_3.jpg",
     client: "Medical Association",
   },
   {
@@ -85,7 +85,7 @@ const galleryItems = [
     category: "corporate",
     title: "Annual Awards Ceremony",
     description: "Glamorous awards night with entertainment",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/image_4.jpg",
     client: "Excellence Awards",
   },
 ]
