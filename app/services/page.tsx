@@ -179,7 +179,9 @@ export default function ServicesPage() {
                     alt={service.title}
                     width={500}
                     height={400}
-                    className="rounded-2xl shadow-xl w-full"
+                    className="shadow-xl w-full"
+                    quality={60}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>

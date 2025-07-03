@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Award, Users, Heart, Target, Eye, Lightbulb } from "lucide-react"
+import dreamsImg from "@/public/images/dreams.jpg"
 
 const team = [
   {
@@ -106,11 +107,13 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image
-                src="/images/dreams.jpg"
+                src={dreamsImg}
                 alt="From Dreams to Reality"
                 width={600}
                 height={500}
-                className="rounded-2xl"
+                quality={60}
+                placeholder="blur"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute -bottom-6 -left-6 bg-[#8B1538] text-white p-6 rounded-xl">
                 <div className="text-2xl font-bold">10+</div>

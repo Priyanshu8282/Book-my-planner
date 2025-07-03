@@ -70,10 +70,6 @@ export default function Footer() {
                 <span className="text-gray-300 text-sm">491 Ambamata Scheme, Udaipur - 313001</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-[#8B1538]" />
-                <span className="text-gray-300 text-sm">+91 9876543210</span>
-              </div>
-              <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-[#8B1538]" />
                 <span className="text-gray-300 text-sm">info@bookmyplanner.com</span>
               </div>

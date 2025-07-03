@@ -72,12 +72,12 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
+      <section className="py-10 md:py-16 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
+        <div className="container mx-auto px-2 md:px-6">
+          <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
             <Badge className="bg-white/20 text-white">Contact Us</Badge>
-            <h1 className="font-playfair text-4xl md:text-5xl font-bold">Let's Create Something Magical</h1>
-            <p className="text-xl text-white/90 leading-relaxed">
+            <h1 className="font-playfair text-3xl md:text-5xl font-bold">Let's Create Something Magical</h1>
+            <p className="text-base md:text-xl text-white/90 leading-relaxed">
               Have a question or ready to start planning your event? Get in touch with our team of experts and let's
               bring your vision to life.
             </p>
@@ -86,24 +86,24 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
+      <section className="py-6 md:py-12">
+        <div className="container mx-auto px-2 md:px-8">
+          <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-start">
             {/* Contact Form */}
             <div>
               <Card className="border-0 shadow-xl">
-                <CardContent className="p-6">
-                  <div className="mb-8">
-                    <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-2">Get in Touch</h2>
-                    <p className="text-gray-600">
+                <CardContent className="p-4 md:p-6">
+                  <div className="mb-4 md:mb-8">
+                    <h2 className="font-playfair text-xl md:text-3xl font-bold mb-1 md:mb-2">Get in Touch</h2>
+                    <p className="text-gray-600 text-sm md:text-base">
                       Fill out the form below and our team will get back to you within 24 hours.
                     </p>
                   </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-medium">
+                  <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                    <div className="grid md:grid-cols-2 gap-3 md:gap-6">
+                      <div className="space-y-1 md:space-y-2">
+                        <label htmlFor="name" className="text-xs md:text-sm font-medium">
                           Full Name
                         </label>
                         <Input
@@ -115,8 +115,8 @@ export default function ContactPage() {
                           required
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium">
+                      <div className="space-y-1 md:space-y-2">
+                        <label htmlFor="email" className="text-xs md:text-sm font-medium">
                           Email Address
                         </label>
                         <Input
@@ -131,22 +131,9 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label htmlFor="phone" className="text-sm font-medium">
-                          Phone Number
-                        </label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="Your phone number"
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="subject" className="text-sm font-medium">
+                    <div className="grid md:grid-cols-2 gap-3 md:gap-6">
+                      <div className="space-y-1 md:space-y-2">
+                        <label htmlFor="subject" className="text-xs md:text-sm font-medium">
                           Subject
                         </label>
                         <Input
@@ -160,8 +147,8 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">
+                    <div className="space-y-1 md:space-y-2">
+                      <label htmlFor="message" className="text-xs md:text-sm font-medium">
                         Your Message
                       </label>
                       <Textarea
@@ -170,7 +157,7 @@ export default function ContactPage() {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Tell us about your event and requirements"
-                        rows={5}
+                        rows={4}
                         required
                       />
                     </div>
@@ -226,15 +213,6 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold mb-1">Our Location</h3>
                         <p className="text-gray-600">491 Ambamata Scheme, Udaipur - 313001, Rajasthan, India</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-[#8B1538]/10 rounded-full">
-                        <Phone className="h-6 w-6 text-[#8B1538]" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1">Phone Number</h3>
-                        <p className="text-gray-600">+91 9876543210</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">

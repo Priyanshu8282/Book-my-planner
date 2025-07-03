@@ -41,10 +41,6 @@ export default function Navbar() {
         <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
             <div className="flex items-center space-x-1">
-              <Phone className="h-3 w-3" />
-              <span>+91 9876543210</span>
-            </div>
-            <div className="flex items-center space-x-1">
               <Mail className="h-3 w-3" />
               <span>info@bookmyplanner.com</span>
             </div>
