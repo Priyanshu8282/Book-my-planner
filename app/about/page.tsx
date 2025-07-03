@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Award, Users, Heart, Target, Eye, Lightbulb } from "lucide-react"
 import dreamsImg from "@/public/images/dreams.jpg"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 
 const team = [
   {
@@ -203,30 +204,33 @@ export default function AboutPage() {
               make your events extraordinary.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-                <CardContent className="p-6 text-center">
-                  <div className="relative mb-6">
-                    <Image
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      width={200}
-                      height={200}
-                      className="w-32 h-32 rounded-full mx-auto object-cover"
-                    />
-                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-[#8B1538] text-white px-3 py-1 rounded-full text-xs">
-                      {member.experience}
-                    </div>
-                  </div>
-                  <h4 className="font-semibold text-lg mb-1">{member.name}</h4>
-                  <p className="text-[#8B1538] font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-sm">{member.bio}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <Carousel opts={{ align: "start" }} className="w-full">
+            <CarouselContent className="-ml-4 md:-ml-8">
+              {team.map((member, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/4">
+                  <Card className="border-0 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+                    <CardContent className="p-6 text-center">
+                      <div className="relative mb-6">
+                        <Image
+                          src={member.image || "/placeholder.svg"}
+                          alt={member.name}
+                          width={200}
+                          height={200}
+                          className="w-32 h-32 rounded-full mx-auto object-cover"
+                        />
+                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-[#8B1538] text-white px-3 py-1 rounded-full text-xs">
+                          {member.experience}
+                        </div>
+                      </div>
+                      <h4 className="font-semibold text-lg mb-1">{member.name}</h4>
+                      <p className="text-[#8B1538] font-medium mb-3">{member.role}</p>
+                      <p className="text-gray-600 text-sm">{member.bio}</p>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
 

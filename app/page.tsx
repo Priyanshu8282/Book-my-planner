@@ -98,6 +98,29 @@ const heroImages = [
   }
 ]
 
+function CountUp({ end, duration = 1200 }) {
+  const [count, setCount] = useState(0)
+  useEffect(() => {
+    let start = 0
+    const endNum = parseInt(end.replace(/\D/g, ""))
+    if (isNaN(endNum)) return setCount(end)
+    const increment = endNum / (duration / 16)
+    let raf
+    function animate() {
+      start += increment
+      if (start < endNum) {
+        setCount(Math.floor(start))
+        raf = requestAnimationFrame(animate)
+      } else {
+        setCount(end)
+      }
+    }
+    animate()
+    return () => raf && cancelAnimationFrame(raf)
+  }, [end, duration])
+  return <span>{typeof count === 'number' ? count + (end.includes("+") ? "+" : "") : count}</span>
+}
+
 export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -178,7 +201,9 @@ export default function HomePage() {
                     <div className="flex justify-center mb-2">
                       <stat.icon className="h-5 w-5 md:h-6 md:w-6 text-[#8B1538] group-hover:scale-110 transition-transform" />
                     </div>
-                    <div className="font-playfair text-xl md:text-2xl font-bold text-[#8B1538]">{stat.number}</div>
+                    <div className="font-playfair text-xl md:text-2xl font-bold text-[#8B1538]">
+                      <CountUp end={stat.number} />
+                    </div>
                     <div className="text-xs md:text-sm text-gray-600">{stat.label}</div>
                   </div>
                 ))}
