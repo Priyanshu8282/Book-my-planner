@@ -27,10 +27,10 @@ import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 
 const stats = [
-  { number: "500+", label: "Happy Couples", icon: Heart },
-  { number: "10+", label: "Years Experience", icon: Award },
-  { number: "1000+", label: "Events Planned", icon: Calendar },
-  { number: "50+", label: "Team Members", icon: Users },
+  // { number: "500+", label: "Happy Couples", icon: Heart },
+  // { number: "10+", label: "Years Experience", icon: Award },
+  // { number: "1000+", label: "Events Planned", icon: Calendar },
+  // { number: "50+", label: "Team Members", icon: Users },
 ]
 
 const services = [
@@ -169,9 +169,6 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-6 md:space-y-8 animate-slide-up text-center lg:text-left">
               <div className="space-y-4">
-                <Badge className="bg-[#8B1538]/10 text-[#8B1538] hover:bg-[#8B1538]/20 mb-8">
-                  ✨ 10+ Years of Excellence
-                </Badge>
                 <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
                   {words.map((word, idx) => (
                     <motion.span
@@ -340,7 +337,7 @@ export default function HomePage() {
 
               <div className="space-y-6">
                 {[
-                  { icon: Award, title: "10+ Years Experience", desc: "Decade of excellence in event planning" },
+                  // { icon: Award, title: "10+ Years Experience", desc: "Decade of excellence in event planning" },
                   { icon: Users, title: "Expert Team", desc: "Seasoned professionals dedicated to your success" },
                   { icon: Heart, title: "Personalized Service", desc: "Every event is unique and tailored to you" },
                   { icon: CheckCircle, title: "Seamless Execution", desc: "Flawless planning and perfect execution" },

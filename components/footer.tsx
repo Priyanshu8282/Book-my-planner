@@ -16,8 +16,7 @@ export default function Footer() {
               <h3 className="font-playfair text-xl font-bold">Book My Planner</h3>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              With over 10 years of expertise in the events industry, we specialize in delivering exceptional Wedding
-              Events, Corporate Events, and MICE solutions.
+              We specialize in delivering exceptional Wedding Events, Corporate Events, and MICE solutions.
             </p>
             <div className="flex space-x-4">
               <Facebook className="h-5 w-5 text-gray-400 hover:text-[#8B1538] cursor-pointer transition-colors" />

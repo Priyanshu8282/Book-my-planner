@@ -22,15 +22,15 @@ const team = [
   },
   {
     name: "Zahra Bohara",
-    role: "Co-Founder",
+    role: "Founder & Event Director",
     image: "/images/founder.jpg",
-    bio: "Co-founder with a passion for excellence and event innovation.",
+    bio: "Founder & Event Director with a passion for excellence, luxury event design, and client delight.",
   },
   {
     name: "Avinash Dayma",
-    role: "Operations Head and Managing Director",
+    role: "Co-Founder",
     image: "/placeholder.svg?height=300&width=300",
-    bio: "Dedicated team member supporting seamless event execution.",
+    bio: "Co-Founder focused on seamless operations, process innovation, and team empowerment.",
   },
 ]
 
@@ -119,10 +119,6 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <AboutImage src={dreamsImg} alt="From Dreams to Reality" />
-              <div className="absolute -bottom-6 -left-6 bg-[#8B1538] text-white p-6 rounded-xl">
-                <div className="text-2xl font-bold">10+</div>
-                <div className="text-sm">Years of Excellence</div>
-              </div>
             </div>
           </div>
         </div>
@@ -294,7 +290,7 @@ export default function AboutPage() {
         <DialogContent className="max-w-lg w-[90vw] sm:w-full bg-[#f0f6ff] text-[#1a2233] p-4 sm:p-8">
           <DialogHeader>
             <DialogTitle className="text-xl sm:text-2xl font-bold text-[#8B1538]">Zahra Bohara</DialogTitle>
-            <DialogDescription className="text-sm sm:text-base text-[#6B1028]">Co-Founder</DialogDescription>
+            <DialogDescription className="text-sm sm:text-base text-[#6B1028]">Founder & Event Director</DialogDescription>
           </DialogHeader>
           <div className="flex flex-col items-center">
             <Image
@@ -305,7 +301,7 @@ export default function AboutPage() {
               className="rounded-xl mb-4 object-cover border-2 border-[#8B1538]/30 w-[90px] h-[110px] sm:w-[120px] sm:h-[150px]"
             />
             <div className="text-[#1a2233] text-center mb-4 text-sm sm:text-base leading-relaxed">
-              Zahra Bohara is a dedicated Co-Founder specializing in luxury event planning, team leadership, and client service.
+              Zahra Bohara is the Founder & Event Director, specializing in luxury & destination event design, creative leadership, and client experience.
             </div>
             <ul className="list-disc list-inside text-[#6B1028] text-left mb-2 text-sm sm:text-base w-full max-w-xs mx-auto">
               <li>Luxury & destination event planning</li>
@@ -321,11 +317,11 @@ export default function AboutPage() {
         <DialogContent className="max-w-lg w-[90vw] sm:w-full bg-[#f6fff0] text-[#1a3322] p-4 sm:p-8">
           <DialogHeader>
             <DialogTitle className="text-xl sm:text-2xl font-bold text-[#6B1028]">Avinash Dayma</DialogTitle>
-            <DialogDescription className="text-sm sm:text-base text-[#8B1538]">Operations Head and Managing Director</DialogDescription>
+            <DialogDescription className="text-sm sm:text-base text-[#8B1538]">Co-Founder</DialogDescription>
           </DialogHeader>
           <div className="flex flex-col items-center">
             <div className="text-[#1a3322] text-center mb-4 text-sm sm:text-base leading-relaxed">
-              Avinash Dayma ensures smooth operations and effective management, driving the team toward successful event execution.
+              Avinash Dayma is the Co-Founder, focused on seamless operations, process innovation, and empowering the team for success.
             </div>
             <ul className="list-disc list-inside text-[#6B1028] text-left mb-2 text-sm sm:text-base w-full max-w-xs mx-auto">
               <li>Operations management</li>
