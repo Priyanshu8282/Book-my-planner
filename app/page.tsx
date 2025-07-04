@@ -24,7 +24,7 @@ import {
   ChevronRight,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
-import gsap from "gsap"
+import { motion } from "framer-motion"
 
 const stats = [
   { number: "500+", label: "Happy Couples", icon: Heart },
@@ -132,7 +132,6 @@ export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const router = useRouter()
-  const headingRef = useRef<HTMLHeadingElement>(null)
   const headingText = "Design your desire into reality"
   const words = headingText.split(" ")
 
@@ -141,22 +140,6 @@ export default function HomePage() {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length)
     }, 5000)
     return () => clearInterval(timer)
-  }, [])
-
-  useEffect(() => {
-    if (headingRef.current) {
-      gsap.fromTo(
-        headingRef.current.querySelectorAll(".word-animate"),
-        { opacity: 0, y: 60 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-          ease: "power3.out",
-          stagger: 0.15,
-        }
-      )
-    }
   }, [])
 
   const nextSlide = () => {
@@ -189,14 +172,17 @@ export default function HomePage() {
                 <Badge className="bg-[#8B1538]/10 text-[#8B1538] hover:bg-[#8B1538]/20 mb-8">
                   ✨ 10+ Years of Excellence
                 </Badge>
-                <h1
-                  ref={headingRef}
-                  className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8"
-                >
+                <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
                   {words.map((word, idx) => (
-                    <span key={idx} className="word-animate inline-block mr-2">
+                    <motion.span
+                      key={idx}
+                      className="inline-block mr-2"
+                      initial={{ opacity: 0, y: 60 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.7, delay: idx * 0.15, ease: "easeOut" }}
+                    >
                       {word}
-                    </span>
+                    </motion.span>
                   ))}
                 </h1>
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-6">

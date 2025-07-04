@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react"
-import { toast } from "sonner"
+import { toast, Toaster } from "react-hot-toast"
 import emailjs from '@emailjs/browser'
 import { Skeleton } from "@/components/ui/skeleton"
 import { motion } from "framer-motion"
@@ -77,6 +77,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
+      <Toaster position="top-right" />
 
       {/* Hero Section */}
       <motion.section
