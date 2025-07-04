@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -6,35 +8,27 @@ import Footer from "@/components/footer"
 import { Award, Users, Heart, Target, Eye, Lightbulb } from "lucide-react"
 import dreamsImg from "@/public/images/dreams.jpg"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
+import { useState } from "react"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 
 const team = [
   {
-    name: "Rajesh Sharma",
-    role: "Founder & CEO",
-    experience: "12+ Years",
+    name: "Mohamand Zishan Hussain",
+    role: "Founder",
     image: "/placeholder.svg?height=300&width=300",
-    bio: "Visionary leader with extensive experience in luxury event planning.",
+    bio: "Visionary founder and leader, dedicated to team success and creative growth.",
   },
   {
-    name: "Priya Agarwal",
-    role: "Creative Director",
-    experience: "8+ Years",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Award-winning designer specializing in wedding and corporate events.",
+    name: "Zahra Bohara",
+    role: "Co-Founder",
+    image: "/images/founder.jpg",
+    bio: "Co-founder with a passion for excellence and event innovation.",
   },
   {
-    name: "Vikram Singh",
-    role: "Operations Manager",
-    experience: "10+ Years",
+    name: "Avinash Dayma",
+    role: "Operations Head and Managing Director",
     image: "/placeholder.svg?height=300&width=300",
-    bio: "Expert in logistics and seamless event execution.",
-  },
-  {
-    name: "Anjali Mehta",
-    role: "Client Relations Head",
-    experience: "6+ Years",
-    image: "/placeholder.svg?height=300&width=300",
-    bio: "Dedicated to ensuring exceptional client experiences.",
+    bio: "Dedicated team member supporting seamless event execution.",
   },
 ]
 
@@ -62,6 +56,9 @@ const values = [
 ]
 
 export default function AboutPage() {
+  const [openFounderModal, setOpenFounderModal] = useState(false)
+  const [openZahraModal, setOpenZahraModal] = useState(false)
+  const [openAvinashModal, setOpenAvinashModal] = useState(false)
   return (
     <div className="about-theme min-h-screen">
       <Navbar />
@@ -198,41 +195,122 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-8">Our Team</Badge>
-            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">Meet the Experts</h2>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">Meet Our Experts</h2>
             <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-              Our passionate team of professionals brings together years of experience, creativity, and dedication to
-              make your events extraordinary.
+              Our talented team brings passion, creativity, and expertise to every event we plan.
             </p>
           </div>
-          <Carousel opts={{ align: "start" }} className="w-full">
-            <CarouselContent className="-ml-4 md:-ml-8">
-              {team.map((member, index) => (
-                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/4">
-                  <Card className="border-0 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
-                    <CardContent className="p-6 text-center">
-                      <div className="relative mb-6">
-                        <Image
-                          src={member.image || "/placeholder.svg"}
-                          alt={member.name}
-                          width={200}
-                          height={200}
-                          className="w-32 h-32 rounded-full mx-auto object-cover"
-                        />
-                        <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-[#8B1538] text-white px-3 py-1 rounded-full text-xs">
-                          {member.experience}
-                        </div>
-                      </div>
-                      <h4 className="font-semibold text-lg mb-1">{member.name}</h4>
-                      <p className="text-[#8B1538] font-medium mb-3">{member.role}</p>
-                      <p className="text-gray-600 text-sm">{member.bio}</p>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className={`bg-white rounded-2xl shadow-lg p-6 text-center group cursor-pointer hover:bg-[#f8e9ef] transition-colors min-h-[320px] flex flex-col justify-between ${member.name === "Mohamand Zishan Hussain" ? "ring-2 ring-[#8B1538]/30" : ""}`}
+                onClick={() => {
+                  if (member.name === "Mohamand Zishan Hussain") setOpenFounderModal(true);
+                  if (member.name === "Zahra Bohara") setOpenZahraModal(true);
+                  if (member.name === "Avinash Dayma") setOpenAvinashModal(true);
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label={`View details for ${member.name}`}
+              >
+                {member.name !== "Mohamand Zishan Hussain" && (
+                  <div className="flex justify-center mb-4">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={120}
+                      height={120}
+                      className="rounded-full object-cover border-4 border-[#8B1538]/10 group-hover:scale-105 transition-transform"
+                    />
+                  </div>
+                )}
+                {member.name === "Mohamand Zishan Hussain" && (
+                  <div className="flex justify-center mb-4">
+                    <Image
+                      src="/placeholder.svg?height=300&width=300"
+                      alt={member.name}
+                      width={120}
+                      height={120}
+                      className="rounded-full object-cover border-4 border-[#8B1538]/10 group-hover:scale-105 transition-transform"
+                    />
+                  </div>
+                )}
+                <div className="font-playfair text-xl font-bold text-[#8B1538]">{member.name}</div>
+                <div className="text-sm mb-1 text-[#6B1028] font-semibold">{member.role}</div>
+                <div className="text-gray-700 text-sm whitespace-pre-line">{member.bio}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* Founder Modal */}
+      <Dialog open={openFounderModal} onOpenChange={setOpenFounderModal}>
+        <DialogContent className="max-w-lg w-[90vw] sm:w-full bg-[#fff0f6] text-[#2d0a1f] p-4 sm:p-8">
+          <DialogHeader>
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-[#8B1538]">Mohamand Zishan Hussain</DialogTitle>
+            <DialogDescription className="text-sm sm:text-base text-[#6B1028]">Founder</DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col items-center">
+            <div className="text-[#2d0a1f] text-center mb-4 text-sm sm:text-base leading-relaxed">
+              Mohamand Zishan Hussain is a visionary founder focused on creative leadership, team growth, and organizational excellence.
+            </div>
+            <ul className="list-disc list-inside text-[#6B1028] text-left mb-2 text-sm sm:text-base w-full max-w-xs mx-auto">
+              <li>Creative leadership</li>
+              <li>Team building</li>
+              <li>Strategic planning</li>
+            </ul>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Zahra Modal */}
+      <Dialog open={openZahraModal} onOpenChange={setOpenZahraModal}>
+        <DialogContent className="max-w-lg w-[90vw] sm:w-full bg-[#f0f6ff] text-[#1a2233] p-4 sm:p-8">
+          <DialogHeader>
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-[#8B1538]">Zahra Bohara</DialogTitle>
+            <DialogDescription className="text-sm sm:text-base text-[#6B1028]">Co-Founder</DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col items-center">
+            <Image
+              src="/images/founder.jpg"
+              alt="Zahra Bohara"
+              width={120}
+              height={150}
+              className="rounded-xl mb-4 object-cover border-2 border-[#8B1538]/30 w-[90px] h-[110px] sm:w-[120px] sm:h-[150px]"
+            />
+            <div className="text-[#1a2233] text-center mb-4 text-sm sm:text-base leading-relaxed">
+              Zahra Bohara is a dedicated Co-Founder specializing in luxury event planning, team leadership, and client service.
+            </div>
+            <ul className="list-disc list-inside text-[#6B1028] text-left mb-2 text-sm sm:text-base w-full max-w-xs mx-auto">
+              <li>Luxury & destination event planning</li>
+              <li>Team leadership</li>
+              <li>Client relationship management</li>
+            </ul>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Avinash Modal */}
+      <Dialog open={openAvinashModal} onOpenChange={setOpenAvinashModal}>
+        <DialogContent className="max-w-lg w-[90vw] sm:w-full bg-[#f6fff0] text-[#1a3322] p-4 sm:p-8">
+          <DialogHeader>
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-[#6B1028]">Avinash Dayma</DialogTitle>
+            <DialogDescription className="text-sm sm:text-base text-[#8B1538]">Operations Head and Managing Director</DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col items-center">
+            <div className="text-[#1a3322] text-center mb-4 text-sm sm:text-base leading-relaxed">
+              Avinash Dayma ensures smooth operations and effective management, driving the team toward successful event execution.
+            </div>
+            <ul className="list-disc list-inside text-[#6B1028] text-left mb-2 text-sm sm:text-base w-full max-w-xs mx-auto">
+              <li>Operations management</li>
+              <li>Process optimization</li>
+              <li>Team coordination</li>
+            </ul>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>

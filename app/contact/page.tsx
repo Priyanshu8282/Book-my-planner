@@ -19,7 +19,6 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     subject: "",
     message: "",
   })
@@ -29,7 +28,9 @@ export default function ContactPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    if (name !== "phone") {
+      setFormData((prev) => ({ ...prev, [name]: value }))
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -52,7 +53,6 @@ export default function ContactPage() {
         setFormData({
           name: "",
           email: "",
-          phone: "",
           subject: "",
           message: "",
         })
@@ -98,6 +98,7 @@ export default function ContactPage() {
                     <p className="text-gray-600 text-sm md:text-base">
                       Fill out the form below and our team will get back to you within 24 hours.
                     </p>
+                      
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
@@ -217,6 +218,7 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold mb-1">Our Location</h3>
                         <p className="text-gray-600">491 Ambamata Scheme, Udaipur - 313001, Rajasthan, India</p>
+                       
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
@@ -226,6 +228,15 @@ export default function ContactPage() {
                       <div>
                         <h3 className="font-semibold mb-1">Email Address</h3>
                         <p className="text-gray-600">info@bookmyplanner.com</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <div className="p-3 bg-[#8B1538]/10 rounded-full">
+                        <Phone className="h-6 w-6 text-[#8B1538]" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-1">Mobile Number</h3>
+                        <a href="tel:917014720675" className="text-gray-600 hover:text-[#8B1538] font-semibold transition-colors">+91 70147 20675</a>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">

@@ -73,6 +73,10 @@ export default function Footer() {
                 <Mail className="h-4 w-4 text-[#8B1538]" />
                 <span className="text-gray-300 text-sm">info@bookmyplanner.com</span>
               </div>
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 text-[#8B1538]" />
+                <a href="tel:917014720675" className="text-gray-300 text-sm hover:text-[#8B1538] transition-colors">+91 70147 20675</a>
+              </div>
             </div>
           </div>
         </div>
