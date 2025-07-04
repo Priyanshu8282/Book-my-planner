@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { Menu, Phone, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
@@ -20,6 +20,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,8 +31,8 @@ export default function Navbar() {
   }, [])
 
   const handleGetQuote = () => {
-    // You can add your quote form logic here
-    window.location.href = '/contact'
+    // Use Next.js router for client-side navigation
+    router.push('/contact')
   }
 
   return (
@@ -62,7 +63,7 @@ export default function Navbar() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 md:space-x-4 group">
+            <Link href="/" prefetch={true} className="flex items-center space-x-3 md:space-x-4 group">
               <div className="relative">
                 <Image
                   src="/images/logo.png"
@@ -85,6 +86,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
+                  prefetch={true}
                   className={`relative font-medium transition-colors hover:text-[#8B1538] ${
                     pathname === item.href ? "text-[#8B1538]" : "text-gray-700"
                   }`}
@@ -111,6 +113,7 @@ export default function Navbar() {
                     <Link
                       key={item.name}
                       href={item.href}
+                      prefetch={true}
                       className={`text-lg font-medium transition-colors hover:text-[#8B1538] ${
                         pathname === item.href ? "text-[#8B1538]" : "text-gray-700"
                       }`}

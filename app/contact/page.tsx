@@ -113,6 +113,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           placeholder="Your name"
                           required
+                          className="placeholder:text-neutral-700"
                         />
                       </div>
                       <div className="space-y-1 md:space-y-2">
@@ -127,6 +128,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           placeholder="Your email"
                           required
+                          className="placeholder:text-neutral-700"
                         />
                       </div>
                     </div>
@@ -143,6 +145,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           placeholder="Wedding Planning Inquiry"
                           required
+                          className="placeholder:text-neutral-700"
                         />
                       </div>
                     </div>
@@ -159,6 +162,7 @@ export default function ContactPage() {
                         placeholder="Tell us about your event and requirements"
                         rows={4}
                         required
+                        className="placeholder:text-neutral-700"
                       />
                     </div>
 

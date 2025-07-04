@@ -95,6 +95,12 @@ const heroImages = [
     alt: "Wedding Decoration",
     title: "Exquisite Decorations",
     subtitle: "Transform your venue into a magical space"
+  },
+  {
+    src: "/images/rich-dinner-tables-covered-with-blue-clothes-sparkling-glass.jpg",
+    alt: "Rich Dinner Tables Covered with Blue Clothes and Sparkling Glass",
+    title: "Elegant Dinner Receptions",
+    subtitle: "Experience luxury dining at its finest"
   }
 ]
 
