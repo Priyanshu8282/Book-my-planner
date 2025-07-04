@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Heart, Users, Calendar, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { Skeleton } from "@/components/ui/skeleton"
 
 const categories = [
   { id: "all", name: "All Events", icon: Calendar },
@@ -118,14 +119,7 @@ export default function GalleryPage() {
                 className="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
               >
                 <div className="aspect-[4/3] relative">
-                  <Image
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    quality={60}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+                  <GalleryImage src={item.image || "/placeholder.svg"} alt={item.title} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                     <h3 className="text-white font-semibold text-lg">{item.title}</h3>
                     <p className="text-white/80 text-sm">{item.client}</p>
@@ -153,4 +147,24 @@ export default function GalleryPage() {
       <Footer />
     </div>
   )
+}
+
+function GalleryImage({ src, alt }: { src: string, alt: string }) {
+  const [loading, setLoading] = useState(true);
+  return (
+    <div className="relative w-full h-full">
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+          <Skeleton className="size-16 rounded-lg" />
+        </div>
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        onLoadingComplete={() => setLoading(false)}
+        className={`object-cover transition-transform duration-500 group-hover:scale-110 ${loading ? 'opacity-0' : 'opacity-100'}`}
+      />
+    </div>
+  );
 }

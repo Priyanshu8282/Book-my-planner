@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -19,6 +21,8 @@ import {
   Gift,
   Plane,
 } from "lucide-react"
+import { useState } from "react"
+import { Skeleton } from "@/components/ui/skeleton"
 
 const services = [
   {
@@ -174,15 +178,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className={`${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                  <Image
-                    src={service.image || "/placeholder.svg"}
-                    alt={service.title}
-                    width={500}
-                    height={400}
-                    className="shadow-xl w-full"
-                    quality={60}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+                  <ServiceImage src={service.image || "/placeholder.svg"} alt={service.title} />
                 </div>
               </div>
             </div>
@@ -258,4 +254,27 @@ export default function ServicesPage() {
       <Footer />
     </div>
   )
+}
+
+function ServiceImage({ src, alt }: { src: string, alt: string }) {
+  const [loading, setLoading] = useState(true);
+  return (
+    <div className="relative w-full h-full">
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+          <Skeleton className="size-16 rounded-lg" />
+        </div>
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        width={500}
+        height={400}
+        onLoadingComplete={() => setLoading(false)}
+        className={`shadow-xl w-full ${loading ? 'opacity-0' : 'opacity-100'}`}
+        quality={60}
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+    </div>
+  );
 }

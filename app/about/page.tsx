@@ -10,6 +10,7 @@ import dreamsImg from "@/public/images/dreams.jpg"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { Skeleton } from "@/components/ui/skeleton"
 
 const team = [
   {
@@ -104,15 +105,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <Image
-                src={dreamsImg}
-                alt="From Dreams to Reality"
-                width={600}
-                height={500}
-                quality={60}
-                placeholder="blur"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <AboutImage src={dreamsImg} alt="From Dreams to Reality" />
               <div className="absolute -bottom-6 -left-6 bg-[#8B1538] text-white p-6 rounded-xl">
                 <div className="text-2xl font-bold">10+</div>
                 <div className="text-sm">Years of Excellence</div>
@@ -315,4 +308,28 @@ export default function AboutPage() {
       <Footer />
     </div>
   )
+}
+
+function AboutImage({ src, alt }: { src: any, alt: string }) {
+  const [loading, setLoading] = useState(true);
+  return (
+    <div className="relative w-full h-full">
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center bg-white/70 z-10">
+          <Skeleton className="size-16 rounded-lg" />
+        </div>
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        width={600}
+        height={500}
+        quality={60}
+        placeholder="blur"
+        sizes="(max-width: 768px) 100vw, 50vw"
+        onLoadingComplete={() => setLoading(false)}
+        className={loading ? 'opacity-0' : 'opacity-100'}
+      />
+    </div>
+  );
 }
