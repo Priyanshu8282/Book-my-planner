@@ -8,6 +8,7 @@ import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Heart, Users, Calendar, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
+import { motion } from "framer-motion"
 
 const categories = [
   { id: "all", name: "All Events", icon: Calendar },
@@ -78,7 +79,13 @@ export default function GalleryPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="py-20 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <Badge className="bg-white/20 text-white">Our Gallery</Badge>
@@ -89,10 +96,16 @@ export default function GalleryPage() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Gallery Section */}
-      <section className="py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+        viewport={{ once: true }}
+        className="py-20"
+      >
         <div className="container mx-auto px-4">
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -142,7 +155,7 @@ export default function GalleryPage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>

@@ -11,6 +11,7 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { Skeleton } from "@/components/ui/skeleton"
+import { motion } from "framer-motion"
 
 const team = [
   {
@@ -65,7 +66,13 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="py-20 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white"
+      >
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <Badge className="bg-white/20 text-white mb-8">About Us</Badge>
@@ -77,10 +84,16 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Story Section */}
-      <section className="py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+        viewport={{ once: true }}
+        className="py-20"
+      >
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center bg-white rounded-2xl p-6 md:p-10">
             <div className="space-y-6">
@@ -113,10 +126,16 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-gray-50">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="py-20 bg-gray-50"
+      >
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-12">
             <Card className="border-0 bg-white rounded-2xl">
@@ -152,10 +171,16 @@ export default function AboutPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Values */}
-      <section className="py-20">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+        viewport={{ once: true }}
+        className="py-20"
+      >
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-8">Our Values</Badge>
@@ -181,10 +206,16 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Team Section */}
-      <section className="py-20 bg-gray-50">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+        viewport={{ once: true }}
+        className="py-20 bg-gray-50"
+      >
         <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <Badge className="bg-[#8B1538]/10 text-[#8B1538] mb-8">Our Team</Badge>
@@ -236,7 +267,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Founder Modal */}
       <Dialog open={openFounderModal} onOpenChange={setOpenFounderModal}>

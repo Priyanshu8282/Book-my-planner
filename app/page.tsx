@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -24,6 +24,7 @@ import {
   ChevronRight,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
+import gsap from "gsap"
 
 const stats = [
   { number: "500+", label: "Happy Couples", icon: Heart },
@@ -131,12 +132,31 @@ export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
   const router = useRouter()
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const headingText = "Design your desire into reality"
+  const words = headingText.split(" ")
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length)
     }, 5000)
     return () => clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    if (headingRef.current) {
+      gsap.fromTo(
+        headingRef.current.querySelectorAll(".word-animate"),
+        { opacity: 0, y: 60 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          stagger: 0.15,
+        }
+      )
+    }
   }, [])
 
   const nextSlide = () => {
@@ -169,10 +189,15 @@ export default function HomePage() {
                 <Badge className="bg-[#8B1538]/10 text-[#8B1538] hover:bg-[#8B1538]/20 mb-8">
                   ✨ 10+ Years of Excellence
                 </Badge>
-                <h1 className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-                  Design your
-                  <span> desire </span>
-                  into reality
+                <h1
+                  ref={headingRef}
+                  className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8"
+                >
+                  {words.map((word, idx) => (
+                    <span key={idx} className="word-animate inline-block mr-2">
+                      {word}
+                    </span>
+                  ))}
                 </h1>
                 <p className="text-base md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-6">
                   With over 10 years of expertise in the events industry, we specialize in delivering exceptional
@@ -345,11 +370,6 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-
-              <Button size="lg" className="bg-[#8B1538] hover:bg-[#6B1028]">
-                Discover Our Story
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </div>
 
             <div className="relative">

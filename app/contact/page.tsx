@@ -16,6 +16,7 @@ import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react"
 import { toast } from "sonner"
 import emailjs from '@emailjs/browser'
 import { Skeleton } from "@/components/ui/skeleton"
+import { motion } from "framer-motion"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -78,7 +79,13 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-10 md:py-16 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="py-10 md:py-16 bg-gradient-to-r from-[#8B1538] to-[#6B1028] text-white"
+      >
         <div className="container mx-auto px-2 md:px-6">
           <div className="max-w-4xl mx-auto text-center space-y-4 md:space-y-6">
             <Badge className="bg-white/20 text-white">Contact Us</Badge>
@@ -89,10 +96,16 @@ export default function ContactPage() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section className="py-6 md:py-12">
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+        viewport={{ once: true }}
+        className="py-6 md:py-12"
+      >
         <div className="container mx-auto px-2 md:px-8">
           <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-start">
             {/* Contact Info */}
@@ -314,7 +327,7 @@ export default function ContactPage() {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <Footer />
     </div>
