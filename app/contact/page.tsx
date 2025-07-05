@@ -77,7 +77,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <Toaster position="top-right" />
+      <Toaster position="top-right" toastOptions={{ duration: 4000 }} />
 
       {/* Hero Section */}
       <motion.section
