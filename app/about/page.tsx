@@ -102,7 +102,7 @@ export default function AboutPage() {
               <div className="space-y-4 text-gray-600">
                 <p className="mb-4">
                   Founded in 2014 in the beautiful city of Udaipur, Book My Planner began as a small team with big
-                  dreams. Our founder, Rajesh Sharma, recognized the need for professional, personalized event planning
+                  dreams. Our founder, Mohamand Zishan Hussain, recognized the need for professional, personalized event planning
                   services in Rajasthan.
                 </p>
                 <p className="mb-4">
