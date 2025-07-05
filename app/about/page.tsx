@@ -17,7 +17,7 @@ const team = [
   {
     name: "Mohamand Zishan Hussain",
     role: "Founder",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/founder1.jpg",
     bio: "Visionary founder and leader, dedicated to team success and creative growth.",
   },
   {
@@ -234,28 +234,15 @@ export default function AboutPage() {
                 role="button"
                 aria-label={`View details for ${member.name}`}
               >
-                {member.name !== "Mohamand Zishan Hussain" && (
-                  <div className="flex justify-center mb-4">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={120}
-                      height={120}
-                      className="rounded-full object-cover border-4 border-[#8B1538]/10 group-hover:scale-105 transition-transform"
-                    />
-                  </div>
-                )}
-                {member.name === "Mohamand Zishan Hussain" && (
-                  <div className="flex justify-center mb-4">
-                    <Image
-                      src="/placeholder.svg?height=300&width=300"
-                      alt={member.name}
-                      width={120}
-                      height={120}
-                      className="rounded-full object-cover border-4 border-[#8B1538]/10 group-hover:scale-105 transition-transform"
-                    />
-                  </div>
-                )}
+                <div className="flex justify-center mb-4">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={120}
+                    height={120}
+                    className="rounded-full object-cover border-4 border-[#8B1538]/10 group-hover:scale-105 transition-transform"
+                  />
+                </div>
                 <div className="font-playfair text-xl font-bold text-[#8B1538]">{member.name}</div>
                 <div className="text-sm mb-1 text-[#6B1028] font-semibold">{member.role}</div>
                 <div className="text-gray-700 text-sm whitespace-pre-line">{member.bio}</div>
@@ -273,6 +260,13 @@ export default function AboutPage() {
             <DialogDescription className="text-sm sm:text-base text-[#6B1028]">Founder</DialogDescription>
           </DialogHeader>
           <div className="flex flex-col items-center">
+            <Image
+              src="/images/founder1.jpg"
+              alt="Mohamand Zishan Hussain"
+              width={120}
+              height={150}
+              className="rounded-xl mb-4 object-cover border-2 border-[#8B1538]/30 w-[90px] h-[110px] sm:w-[120px] sm:h-[150px]"
+            />
             <div className="text-[#2d0a1f] text-center mb-4 text-sm sm:text-base leading-relaxed">
               Mohamand Zishan Hussain is a visionary founder focused on creative leadership, team growth, and organizational excellence.
             </div>
