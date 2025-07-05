@@ -22,13 +22,9 @@ import {
   Utensils,
   ChevronLeft,
   ChevronRight,
-  Flower2,
-  Diamond,
-  Crown,
-  Gem,
 } from "lucide-react"
 import { useRouter } from "next/navigation"
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion"
+import { motion } from "framer-motion"
 
 const stats = [
   // { number: "500+", label: "Happy Couples", icon: Heart },
@@ -132,86 +128,6 @@ function CountUp({ end, duration = 1200 }) {
   return <span>{typeof count === 'number' ? count + (end.includes("+") ? "+" : "") : count}</span>
 }
 
-// 3D Floating Elements Component
-function Floating3DElement({ icon: Icon, delay = 0, duration = 3, className = "" }) {
-  return (
-    <motion.div
-      className={`absolute ${className}`}
-      animate={{
-        y: [0, -20, 0],
-        rotateY: [0, 180, 360],
-        rotateX: [0, 15, 0],
-      }}
-      transition={{
-        duration,
-        delay,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    >
-      <Icon className="h-8 w-8 text-[#8B1538]/60" />
-    </motion.div>
-  )
-}
-
-// 3D Parallax Card Component
-function Parallax3DCard({ children, className = "" }) {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  })
-  
-  const y = useTransform(scrollYProgress, [0, 1], [0, -100])
-  const rotateX = useTransform(scrollYProgress, [0, 1], [0, 15])
-  const rotateY = useTransform(scrollYProgress, [0, 1], [0, 10])
-  
-  return (
-    <motion.div
-      ref={ref}
-      style={{ y, rotateX, rotateY }}
-      className={`transform-gpu ${className}`}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
-// 3D Interactive Element
-function Interactive3DElement({ children, className = "" }) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const elementRef = useRef(null)
-  
-  const handleMouseMove = (e) => {
-    if (elementRef.current) {
-      const rect = elementRef.current.getBoundingClientRect()
-      const x = (e.clientX - rect.left - rect.width / 2) / 20
-      const y = (e.clientY - rect.top - rect.height / 2) / 20
-      setMousePosition({ x, y })
-    }
-  }
-  
-  const handleMouseLeave = () => {
-    setMousePosition({ x: 0, y: 0 })
-  }
-  
-  return (
-    <motion.div
-      ref={elementRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      animate={{
-        rotateX: mousePosition.y,
-        rotateY: mousePosition.x,
-      }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className={`transform-gpu perspective-1000 ${className}`}
-    >
-      {children}
-    </motion.div>
-  )
-}
-
 export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -248,14 +164,6 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden hero-pattern animate-fade-in">
         <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/70"></div>
-        
-        {/* 3D Floating Elements */}
-        <Floating3DElement icon={Diamond} delay={0} className="top-20 left-10" />
-        <Floating3DElement icon={Crown} delay={1} className="top-32 right-20" />
-        <Floating3DElement icon={Gem} delay={2} className="bottom-32 left-20" />
-        <Floating3DElement icon={Flower2} delay={0.5} className="bottom-20 right-10" />
-        <Floating3DElement icon={Star} delay={1.5} className="top-1/2 left-1/4" />
-        <Floating3DElement icon={Heart} delay={2.5} className="top-1/3 right-1/4" />
 
         <div className="container mx-auto px-4 md:px-8 relative z-10 py-12 md:py-0">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -316,21 +224,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            <Interactive3DElement className="animate-fade-in order-first lg:order-last">
-              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative animate-fade-in order-first lg:order-last">
+              <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden">
                 {heroImages.map((image, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    className={`absolute inset-0 transition-all duration-1000 ${
-                      index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                    className={`absolute inset-0 transition-opacity duration-1000 ${
+                      index === currentSlide ? 'opacity-100' : 'opacity-0'
                     }`}
-                    initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
-                    animate={{ 
-                      opacity: index === currentSlide ? 1 : 0, 
-                      scale: index === currentSlide ? 1 : 0.95,
-                      rotateY: index === currentSlide ? 0 : -15
-                    }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
                   >
                     <Image
                       src={image.src}
@@ -340,16 +241,11 @@ export default function HomePage() {
                       priority={index === 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <motion.div 
-                      className="absolute bottom-6 left-6 right-6 text-white"
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.3, duration: 0.8 }}
-                    >
+                    <div className="absolute bottom-6 left-6 right-6 text-white">
                       <h3 className="font-playfair text-2xl md:text-3xl font-bold mb-2">{image.title}</h3>
                       <p className="text-sm md:text-base text-white/90">{image.subtitle}</p>
-                    </motion.div>
-                  </motion.div>
+                    </div>
+                  </div>
                 ))}
                 
                 {/* Navigation Buttons */}
@@ -379,7 +275,7 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-            </Interactive3DElement>
+            </div>
           </div>
         </div>
       </section>
@@ -397,10 +293,10 @@ export default function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
-              <Parallax3DCard key={index}>
-                <Card
-                  className="group transition-all duration-300 border-0 rounded-2xl animate-slide-up hover:shadow-2xl hover:scale-105"
-                >
+              <Card
+                key={index}
+                className="group transition-all duration-300 border-0 rounded-2xl animate-slide-up"
+              >
                 <CardContent className="p-6 md:p-8">
                   <div className="flex justify-center mb-6">
                     <div className="p-3 md:p-4 bg-[#8B1538]/10 rounded-full group-hover:bg-[#8B1538] transition-colors">
@@ -420,7 +316,6 @@ export default function HomePage() {
                   <Button className="w-full mt-6 bg-[#8B1538] hover:bg-[#6B1028]" onClick={() => router.push('/services')}>Learn More</Button>
                 </CardContent>
               </Card>
-              </Parallax3DCard>
             ))}
           </div>
         </div>
@@ -500,8 +395,7 @@ export default function HomePage() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Parallax3DCard>
-              <Card className="bg-white/10 backdrop-blur-sm border-white/20 animate-slide-up hover:shadow-2xl">
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20 animate-slide-up">
               <CardContent className="p-8 text-center">
                 <div className="flex justify-center mb-4">
                   {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
@@ -524,7 +418,6 @@ export default function HomePage() {
                 </div>
               </CardContent>
             </Card>
-            </Parallax3DCard>
 
             <div className="flex justify-center mt-8 space-x-2">
               {testimonials.map((_, index) => (
