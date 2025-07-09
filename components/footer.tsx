@@ -19,9 +19,12 @@ export default function Footer() {
               We specialize in delivering exceptional Wedding Events, Corporate Events, and MICE solutions.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 text-gray-400 hover:text-[#8B1538] cursor-pointer transition-colors" />
-              <Instagram className="h-5 w-5 text-gray-400 hover:text-[#8B1538] cursor-pointer transition-colors" />
-              <Twitter className="h-5 w-5 text-gray-400 hover:text-[#8B1538] cursor-pointer transition-colors" />
+              <Link href="https://www.facebook.com/share/1CGiEuzeir/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <Facebook className="h-5 w-5 text-gray-400 hover:text-[#8B1538] cursor-pointer transition-colors" />
+              </Link>
+              <Link href="https://www.instagram.com/book_my_planner?igsh=MWdiYmN4bmo2OTJ4cg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <Instagram className="h-5 w-5 text-gray-400 hover:text-[#8B1538] cursor-pointer transition-colors" />
+              </Link>
               <Youtube className="h-5 w-5 text-gray-400 hover:text-[#8B1538] cursor-pointer transition-colors" />
             </div>
           </div>

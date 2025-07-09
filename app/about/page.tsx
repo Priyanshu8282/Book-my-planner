@@ -76,7 +76,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <Badge className="bg-white/20 text-white mb-8">About Us</Badge>
-            <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-8">Crafting Memories Since 2014</h1>
+            <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-8">Crafting Memories</h1>
             <p className="text-xl text-white/90 leading-relaxed mb-6">
               Based in the royal city of Udaipur, Book My Planner has been creating magical moments and unforgettable
               experiences for over a decade. Our journey began with a simple vision: to make every celebration
@@ -98,7 +98,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center bg-white rounded-2xl p-6 md:p-10">
             <div className="space-y-6">
               <Badge className="bg-[#8B1538]/10 text-[#8B1538]">Our Story</Badge>
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">From Dreams to Reality</h2>
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-8">Design Your Desire Into Reality</h2>
               <div className="space-y-4 text-gray-600">
                 <p className="mb-4">
                   Founded in 2014 in the beautiful city of Udaipur, Book My Planner began as a small team with big
@@ -271,6 +271,7 @@ export default function AboutPage() {
               Mohammad Zishan Hussain is a visionary founder focused on creative leadership, team growth, and organizational excellence.
             </div>
             <ul className="list-disc list-inside text-[#6B1028] text-left mb-2 text-sm sm:text-base w-full max-w-xs mx-auto">
+              <li>PGDM in Event Management</li>
               <li>Creative leadership</li>
               <li>Team building</li>
               <li>Strategic planning</li>
