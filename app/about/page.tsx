@@ -15,7 +15,7 @@ import { motion } from "framer-motion"
 
 const team = [
   {
-    name: "Mohamand Zishan Hussain",
+    name: "Mohammad Zishan Hussain",
     role: "Founder",
     image: "/images/founder1.jpg",
     bio: "Visionary founder and leader, dedicated to team success and creative growth.",
@@ -29,7 +29,7 @@ const team = [
   {
     name: "Avinash Dayma",
     role: "Co-Founder",
-    image: "/placeholder.svg?height=300&width=300",
+    image: "/images/avinash.jpg",
     bio: "Co-Founder focused on seamless operations, process innovation, and team empowerment.",
   },
 ]
@@ -102,7 +102,7 @@ export default function AboutPage() {
               <div className="space-y-4 text-gray-600">
                 <p className="mb-4">
                   Founded in 2014 in the beautiful city of Udaipur, Book My Planner began as a small team with big
-                  dreams. Our founder, Mohamand Zishan Hussain, recognized the need for professional, personalized event planning
+                  dreams. Our founder, Mohammad Zishan Hussain, recognized the need for professional, personalized event planning
                   services in Rajasthan.
                 </p>
                 <p className="mb-4">
@@ -224,9 +224,9 @@ export default function AboutPage() {
             {team.map((member, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-2xl shadow-lg p-6 text-center group cursor-pointer hover:bg-[#f8e9ef] transition-colors min-h-[320px] flex flex-col justify-between ${member.name === "Mohamand Zishan Hussain" ? "ring-2 ring-[#8B1538]/30" : ""}`}
+                className={`bg-white rounded-2xl shadow-lg p-6 text-center group cursor-pointer hover:bg-[#f8e9ef] transition-colors min-h-[320px] flex flex-col justify-between ${member.name === "Mohammad Zishan Hussain" ? "ring-2 ring-[#8B1538]/30" : ""}`}
                 onClick={() => {
-                  if (member.name === "Mohamand Zishan Hussain") setOpenFounderModal(true);
+                  if (member.name === "Mohammad Zishan Hussain") setOpenFounderModal(true);
                   if (member.name === "Zahra Bohara") setOpenZahraModal(true);
                   if (member.name === "Avinash Dayma") setOpenAvinashModal(true);
                 }}
@@ -256,19 +256,19 @@ export default function AboutPage() {
       <Dialog open={openFounderModal} onOpenChange={setOpenFounderModal}>
         <DialogContent className="max-w-lg w-[90vw] sm:w-full bg-[#fff0f6] text-[#2d0a1f] p-4 sm:p-8">
           <DialogHeader>
-            <DialogTitle className="text-xl sm:text-2xl font-bold text-[#8B1538]">Mohamand Zishan Hussain</DialogTitle>
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-[#8B1538]">Mohammad Zishan Hussain</DialogTitle>
             <DialogDescription className="text-sm sm:text-base text-[#6B1028]">Founder</DialogDescription>
           </DialogHeader>
           <div className="flex flex-col items-center">
             <Image
               src="/images/founder1.jpg"
-              alt="Mohamand Zishan Hussain"
+              alt="Mohammad Zishan Hussain"
               width={120}
               height={150}
               className="rounded-xl mb-4 object-cover border-2 border-[#8B1538]/30 w-[90px] h-[110px] sm:w-[120px] sm:h-[150px]"
             />
             <div className="text-[#2d0a1f] text-center mb-4 text-sm sm:text-base leading-relaxed">
-              Mohamand Zishan Hussain is a visionary founder focused on creative leadership, team growth, and organizational excellence.
+              Mohammad Zishan Hussain is a visionary founder focused on creative leadership, team growth, and organizational excellence.
             </div>
             <ul className="list-disc list-inside text-[#6B1028] text-left mb-2 text-sm sm:text-base w-full max-w-xs mx-auto">
               <li>Creative leadership</li>
