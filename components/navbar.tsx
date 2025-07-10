@@ -43,7 +43,7 @@ export default function Navbar() {
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
             <div className="flex items-center space-x-1">
               <Mail className="h-3 w-3" />
-              <span>info@bookmyplanner.com</span>
+              <span>bookmyplanner@gmail.com</span>
             </div>
           </div>
           <div className="text-center sm:text-left">

@@ -121,7 +121,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1">Email Address</h3>
-                        <p className="text-gray-600">info@bookmyplanner.com</p>
+                        <p className="text-gray-600">bookmyplanner@gmail.com</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">

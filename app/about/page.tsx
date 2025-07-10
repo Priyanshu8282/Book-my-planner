@@ -315,6 +315,13 @@ export default function AboutPage() {
             <DialogDescription className="text-sm sm:text-base text-[#8B1538]">Co-Founder</DialogDescription>
           </DialogHeader>
           <div className="flex flex-col items-center">
+            <Image
+              src="/images/avinash.jpg"
+              alt="Avinash Dayma"
+              width={120}
+              height={150}
+              className="rounded-xl mb-4 object-cover border-2 border-[#8B1538]/30 w-[90px] h-[110px] sm:w-[120px] sm:h-[150px]"
+            />
             <div className="text-[#1a3322] text-center mb-4 text-sm sm:text-base leading-relaxed">
               Avinash Dayma is the Co-Founder, focused on seamless operations, process innovation, and empowering the team for success.
             </div>
